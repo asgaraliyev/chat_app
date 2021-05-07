@@ -1,0 +1,8 @@
+<template name="home">
+    <section id="messages">
+        {{#each messages}}
+        <button  class="message right" data-id="{{_id}}">{{message}}</button>
+        {{/each}}
+    </section>
+    {{>footer}}
+</template>
