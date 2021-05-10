@@ -1,0 +1,16 @@
+<template name="sender">
+    <form id="sender">
+        {{#if (isReplyActive)}}
+        <div id="reply-area">
+            <i class="fa fa-times-circle" aria-hidden="true"></i>
+        <div class="content">
+            <strong><i class="fa fa-reply" aria-hidden="true"></i> {{isReplyActive.email}}</strong>
+            <br>
+            <p>{{isReplyActive.message}}...</p>
+        </div>
+        </div>{{/if}}
+
+        <input id="message" class="left" type="text" placeholder="Hello" autocomplete="off">
+        <button class="right" type="submit"> <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+    </form>
+</template>

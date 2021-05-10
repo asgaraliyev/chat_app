@@ -1,0 +1,23 @@
+<template name="home">
+    <section id="messages">
+        {{#each messages}}
+        <br><br>
+
+        <button class="message {{#if(isMe _id)}}right{{else}}left{{/if}}" data-id="{{_id}}">
+            {{#if (isMe _id)}}
+            <i class="fa fa-trash remove-message" data-id="{{_id}}" aria-hidden="true"></i>
+            {{else}}
+            <i class="fa fa-reply reply-message" data-id="{{_id}}" aria-hidden="true"></i>
+            {{/if}}
+            <a href="/profile/{{email}}">{{email}}</a>
+            <div class="replied-area">
+                {{replyMessage.message}}
+            </div>
+            <p> {{message}}</p>
+         
+        </button>
+        {{/each}}
+        <div style="height: 50px;clear: both;"></div>
+    </section>
+    {{>sender}}
+</template>
